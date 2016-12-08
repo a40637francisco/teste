@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>Issues: </h1>
+    {{#each issues}}
+        <div class="issue well">
+            <h2>{{title}}</h2>
+            <h4>created by {{createdBy}}</h4>
+            <h4>state:{{state}}</h4>
+            <h3>{{body}}</h3>
+            <div>
+                <form action="/create-google-task" method="get">
+                    <input type="text" name="title" value="{{title}}" style="visibility: hidden;">
+                    <input type="text" name="createdBy" value="{{createdBy}}" style="visibility: hidden;">
+                    <input type="text" name="state" value="{{state}}" style="visibility: hidden;">
+                    <input type="text" name="body" value="{{body}}" style="visibility: hidden;">
+                    <input type="text" name="repo" value="{{repo}}" style="visibility: hidden;">
+                    <input type="submit" value="Create task">
+                </form>
+            </div>
+
+        </div>
+    {{/each}}
+
+
+</div>

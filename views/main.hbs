@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="well loginWell">
+        <h1 style="text-align: center">GitHub <i class="fa fa-github" aria-hidden="true"></i></h1>
+        <div style="padding-top: 50px">
+            {{#if github}}
+                <div>
+                    <form action="/github-login" method="get">
+                        <button class="loginBtn loginBtn--github" type="submit">
+                            Log in with GitHub
+                        </button>
+                    </form>
+                </div>
+            {{/if}}
+            <div style="padding-top: 50px;">
+                <form action="/github-repos">
+                    <input type="text" placeholder="Find issues for a public repository..." name="repo">
+                    <input type="submit" style="visibility: hidden;"/>
+                </form>
+            </div>
+            {{#unless github}}
+                <div style="padding-top: 50px;">
+                    <form action="/github-my-repos" >
+                        <label for="myRepo">Find issues for yours repositories...</label>
+                        <input type="submit" value="search" id="myRepo" />
+                    </form>
+                </div>
+            {{/unless}}
+        </div>
+
+    </div>
+</div>

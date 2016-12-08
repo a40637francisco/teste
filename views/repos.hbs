@@ -1,0 +1,12 @@
+<div class="container">
+    <h1>Repositories:</h1>
+    {{#each repos}}
+        <div>
+            <h3> <a href="/github-issues?repo={{name}}">{{name}}</a> </h3>
+            <h5>{{description}}</h5>
+            <h5>-{{language}}</h5>
+        </div>
+    {{/each}}
+
+
+</div>
